@@ -1,0 +1,71 @@
+# dialogs flows
+
+dialogs:
+
+- flow: 
+  - intent_account_balance
+  - utter_account_balance
+
+- flow: 
+  - intent_total_expenditure
+  - utter_total_expenditure
+
+- flow: 
+  - intent_affirm
+  - utter_check
+
+- flow:
+  - intent_new_buy
+  - utter_ask_price
+
+- flow:
+  - intent_inform
+  - utter_check
+
+- flow: # thanks
+  - intent_thanks
+  - utter_my_pleasure
+
+- flow:
+  - intent_greeting
+  - utter_how_can_help
+
+- flow:
+  - intent_help
+  - utter_help_info
+
+- flow: # goodbye
+  - intent_goodbye
+  - utter_goodbye
+
+- flow: 
+  - intent_housing
+  - utter_housing
+ 
+- flow: 
+  - intent_transportation
+  - utter_transportation
+ 
+- flow: 
+  - intent_food
+  - utter_food
+ 
+- flow: 
+  - intent_recreation
+  - utter_recreation
+ 
+- flow: 
+  - intent_healthcare
+  - utter_healthcare
+ 
+- flow:
+  - intent_utilities
+  - utter_utilities
+ 
+- flow: 
+  - intent_miscellaneous
+  - utter_miscellaneous
+
+- flow: 
+  - intent_monthly_savings
+  - utter_monthly_savings

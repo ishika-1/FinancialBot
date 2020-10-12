@@ -1,0 +1,23 @@
+{
+  "utterances": {
+    "utter_goodbye": "Good bye.",
+    "utter_my_pleasure": "My pleasure to help you.",
+    "utter_affirm": "Yeah, for sure!",
+    "utter_help_info": "Well, I am you personal wallet assistant, called to help you with your private finance management.",
+    "utter_how_can_help": "Hi, how can I help you my friend?",
+    "utter_repeat_again": "Sorry, could you repeat again please?",
+    "utter_total_expenditure": "Your total expenditure is __",
+    "utter_account_balance": "Your current account balance is __",
+    "utter_housing": "Successfully recorded expense of __ for category housing.",
+    "utter_transportation": "Successfully recorded expense of __ for category transportation.",
+    "utter_food": "Successfully recorded expense of __ for category food.",
+    "utter_recreation": "Successfully recorded expense of __ for category recreation.",
+    "utter_healthcare": "Successfully recorded expense of __ for category healthcare.",
+    "utter_utilities": "Successfully recorded expense of __ for category utilities.",
+    "utter_miscellaneous": "Successfully recorded expense of __.",
+    "utter_monthly_savings": "Your monthly savings are __.",
+    "utter_give_number": "Please enter a valid expense (in numeric form).",
+    "utter_ask_price": "What's the price?",
+    "utter_check": "You cannot buy this."
+  }
+}

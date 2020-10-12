@@ -1,0 +1,41 @@
+actions_list:
+- intent_greeting
+- intent_goodbye
+- intent_thanks
+- intent_help
+- intent_affirm
+- intent_deny
+- intent_account_balance
+- intent_housing
+- intent_transportation
+- intent_total_expenditure
+- intent_food
+- intent_utilities
+- intent_recreation
+- intent_miscellaneous
+- intent_healthcare
+- intent_monthly_savings
+- intent_inform
+- intent_new_buy
+
+- utter_goodbye
+- utter_my_pleasure
+- utter_account_balance
+- utter_housing
+- utter_transportation
+- utter_total_expenditure
+- utter_food
+- utter_utilities
+- utter_recreation
+- utter_healthcare
+- utter_miscellaneous
+- utter_monthly_savings
+- utter_affirm
+- utter_help_info
+- utter_how_can_help
+- utter_repeat_again
+- utter_give_number
+- utter_ask_price
+- utter_check
+
+- action_claculate_new_expense

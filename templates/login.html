@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title></title>
+
+    <!--<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">JOB-SCRAPING</a>
+        </div>
+        <ul class="nav navbar-nav">
+
+
+
+
+        </ul>
+      </div>
+    </nav>-->
+  <style>
+   body, html {
+   height: 100%;
+   margin: 0;
+}
+
+
+
+   #addQuestion{
+
+   width: 30%;
+   color: black;
+   height: 40%;
+   margin: auto auto;
+   overflow: hidden;
+   padding: 0 0;
+   padding-top: 10%;
+   align-items: center;
+   justify-content: space-around;
+   display: block;
+   float: none;
+}
+
+
+   form {
+       border: 3px solid black;
+       padding-top: 30px;
+       padding-bottom:30px;
+       padding-left: 30px;
+       padding-right: 30px;
+       margin-bottom: 100px;
+       background-color: #f2f2f2;
+
+   }
+
+
+   input[type=text],
+   input[type=password] {
+       width: 100%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       box-sizing: border-box;
+   }
+   /*set a style for the buttons*/
+
+   button {
+       background-color: #4CAF50;
+       color: black;
+       padding: 14px 20px;
+       margin: 8px 0;
+       border: none;
+       cursor: pointer;
+       width: 40%;
+   }
+   /* set a hover effect for the button*/
+
+   button:hover {
+       opacity: 0.8;
+   }
+   /*set extra style for the cancel button*/
+
+   .cancelbtn {
+       width: auto;
+       padding: 10px 18px;
+       background-color: #f44336;
+   }
+
+
+   .container {
+       padding: 40%;
+   }
+   /*set the forgot password text*/
+
+   span.psw {
+       float: left;
+       padding-top: 16px;
+   }
+
+   @media screen and (max-width: 300px) {
+       span.psw {
+           display: block;
+           float: none;
+
+       }
+       .cancelbtn {
+           align-self: center;
+           width: 100%;
+       }
+   }
+</style>
+</head>
+
+<body><div class="bg">
+<div id="addQuestion">
+
+    <form method="POST">
+      {% csrf_token %}
+        <div class="container-fluid main-container">
+            <div class="row">
+            <h1><label>LOGIN FORM</label></h1>
+            <br/>
+            <label><b>USERNAME</b><br></label>
+            <input type="text" placeholder="Enter Username" name="username" style="color: blue" required> <br>
+
+            <label><b>PASSWORD</b><br></label>
+            <input type="password" placeholder="Enter Password" name="password" required> <br>
+
+            <button type="submit">LOGIN</button>
+        </div>
+        </div>
+        <br/><br>
+        <div class="container-fluid" >
+         <h4><span class="psw" style="color: black">Not a member? <a href="{% url 'registration' %}"> SIGN UP!</a></span></h4>
+
+        </div>
+    </form>
+        </div>
+  </div>
+
+
+ </body>
+</html>

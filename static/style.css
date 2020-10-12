@@ -1,0 +1,226 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-weight: 100;
+
+}
+
+body {
+    background: rgb(39, 119, 180);
+}
+
+.chatbox {
+    
+    width: 500px;
+    min-width: 390px;
+    height: 600px;
+    background: white;
+    padding: 25px;
+    margin: 0px auto 0px auto;
+    box-shadow: 0 3px #ccc;
+
+}
+
+.chatlogs {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/*Styling the scrolllbar*/
+.chatlogs::-webkit-scrollbar{
+    width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1);
+}
+
+
+.chat {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.user-photo img{
+    background-color: rgb(39, 119, 180);
+    padding: 8px;
+    width: 100%;
+}
+
+.chat .chat-message {
+    padding: 15px;
+    margin: 5px 10px 0;
+    font-size: 18px;
+}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.friend .chat-message {
+    color: black;
+    width: auto;
+    max-width: 70%;
+    background: rgb(229, 229, 234);
+    border-radius: 20px 20px 20px 0;
+}
+
+.self .chat-message {
+    color: white;
+    max-width: 80%;
+    width: auto;
+    margin: 5px 0 5px auto;
+    border-radius: 20px 20px 0px 20px;
+    background: rgb(64, 172, 246);
+    overflow-wrap: break-word;
+}
+
+.headerBar{
+    font-size: 25px;
+    color: white;
+    padding: 25px;
+    width: 500px;
+    min-width: 390px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 20px auto 0px auto;
+    background: rgb(226, 118, 30);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.headerBar .title {
+    margin: auto 20px;
+}
+
+.headerBar .user-photo {
+    margin: 0px 0px 0px 10px;
+
+}
+
+.headerBar .user-photo img{
+    width: 100%;
+}
+
+.chat-form {
+
+    margin: 0px auto 0px auto;
+    display: flex;
+    width: 500px;
+    min-width: 390px;
+    align-items: flex-start;
+    overflow: auto;
+    background: rgb(244, 243, 244);
+    border-radius: 0 0 10px 10px;
+    border-top: 5px solid rgb(212, 212, 212);
+
+}
+
+
+#inputDiv {
+    width: 75%;
+    margin-right: 15px;
+    
+}
+
+
+.chat-form textarea {
+    padding: 5px 5px 5px 15px; 
+    background: #fbfbfb;
+    width: 100%;
+    min-height: 5px;
+    border: 2px solid lightblue;
+    border-radius: 20px;
+    resize: none;
+    font-size: 18px;
+    color: #000;
+    margin: 15px 0px 15px 10px;
+    display:block;
+    overflow:hidden;
+    box-shadow: none;
+    outline: none;
+
+}
+
+.chat-form textarea:focus {
+    background: #fff;
+}
+
+#chat-form-buttons {
+    margin: auto;
+}
+
+/* Old Orange button for speaking, now we have an icon of a microphone*/
+/*.chat-form button {
+    height: 65px;
+    background: rgba(255, 153, 0, .7);;
+    padding: 5px 15px;
+    font-size: 30px;
+    color: white;
+    border: none;
+    margin: 0 10px;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 rgba(255, 153, 0, .7);;
+    cursor: pointer;
+}*/
+
+.chat-form button:hover{
+    background: rgb(255, 153, 0);
+}
+
+.gif img {
+    margin: 10px;
+    border-radius: 20px;
+}
+
+
+.buttonResponse {
+    color: white;
+    max-width: 80%;
+    width: fit-content;
+    margin: 5px 0 5px auto;
+    border-radius: 20px 20px 0px 20px;
+    background: rgb(64, 172, 246);
+    overflow-wrap: break-word;
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 5px;
+    float: left;
+}
+
+.buttonResponse:hover{
+        background: rgb(100, 200, 255);
+}
+
+
+#switchInputType{
+    max-width: 40px;
+    max-height: 40px;
+   
+}
+
+#rec {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+#buttonDiv {
+    margin: 0 auto;
+    width: inherit;
+
+}
+
+
