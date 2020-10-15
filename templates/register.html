@@ -26,15 +26,19 @@
       {{user_form.username}}
         <hr>
 
+        <label for="name"><b>FULL NAME</b></label>
+      <input type="text" placeholder="Enter name" name="name" required>
+      <hr>
+
+        <label for="Email ID"><b>EMAIL ID</b></label>
+        {{user_form.email}}
+
+        <hr>
+
         <label for="Password"><b>PASSWORD</b></label>
         {{user_form.password}}
 
           <hr>
-
-
-      <label for="name"><b>NAME</b></label>
-      <input type="text" placeholder="Enter name" name="name" required>
-      <hr>
 
       <label for="monthly_income"><b>MONTHLY INCOME</b></label>
       <input type="number" placeholder="Enter Monthly Income" name="monthly_income" required>
