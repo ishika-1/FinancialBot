@@ -15,7 +15,11 @@ We aim to build a simple, intelligent chatbot which will provide personalized fi
 ## MOTIVATION
 
 In today’s digital world, managing finances is a challenge being faced by both, individuals and organizations. While people have some compulsory scheduled expenses, impulsive expenditures often destroy the balance. Hence, quite often individuals need their financial records and advice. Thus, our project is an attempt to address this issue, our chatbot aims at providing the users with financial services which are personalized for them.
+
+
 Improving the efficiency of client service, minimizing human error and resolving client queries quicker is the aim of our chatbot.
+
+
 Our Chatbot will allow customers to manage requests in a faster and a more efficient way. Financial services chatbots can assist clients in conducting a variety of financial transactions in a conversational and secure manner. From reviewing an account to making payments, to taking advice on a particular expenditure, the client can handle simple tasks on their own using this chatbot. 
 
 ## OBJECTIVE
