@@ -1,12 +1,14 @@
 # FinancialBot
-An Intelligent Chatbot for Personalised Financial Services
-Project Team: 
+**An Intelligent Chatbot for Personalised Financial Services**
+
+
+**Project Team:**
 1.	Ishika Agarwal (18103034) 
 2.	Devanshi Garg (18103045)
 3.	Riddhi Mahajan (18103110)
 4.	Ishita Arora (18103130)
 
-Project Mentor: Dr. Poonam Saini, Faculty, Computer Science and Engineering
+**Project Mentor:** Dr. Poonam Saini, Faculty, Computer Science and Engineering
 
 ## STATEMENT
 
@@ -31,6 +33,10 @@ The bot will provide the following information to a user:
 * customer care services
 * advice on expenditures (whether a client should spend money for an event/cause) 
 We aim to build a responsive web application for the same in which we will provide for an interface of a dialogue box, where in the client will be able to write his queries and the bot will answer his/her questions in the best possible way.
+
+## WORKPLAN
+
+![GitHub Logo](C:\Users\ISHIKA\Desktop\FinancialBot\FinBot Diagrams\Workflow.png)
 
 ## DELIVERABLES
 
