@@ -47,7 +47,7 @@
 							<label for="Password"><b style = "color: #555555">PASSWORD</b></label>
 							<input type="password" name="password" required>
 						</div>
-						<br><br>
+						<br>
 						<div class="container-login100-form-btn">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
@@ -57,11 +57,18 @@
 							</div>
 						</div>
 
-						<div class="text-center p-t-115">
+						<div style="text-align: center;">
+							<br><br>
+							<span class="txt1">
+								{%for i in messages%}
+                    				<p>{{i}}</p>
+                				{% endfor %}
+							</span>
+							<br>
 							<a class="txt2" href="{% url 'password_reset' %}">
 								Forgot Password?
 							</a>
-							<br></br>
+							<br>
 							<span class="txt1">
 								Don’t have an account?
 							</span>

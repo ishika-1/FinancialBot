@@ -77,10 +77,22 @@
 						<div class="container-login100-form-btn">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit">
+								<button class="login100-form-btn" type="submit" style="padding: 0 20px 0px 20px;">
 									Register
 								</button>
 							</div>
+						</div>
+						<div style="text-align: center;">
+							<br><br>
+							<span class="txt1">
+								{%for i in messages%}
+                    				<p>{{i}}<br></p>
+                				{% endfor %}
+							</span>
+							<span class="txt1"><br>Already have an account?&nbsp;</span>
+							<a class="txt2" href="{% url 'login' %}">
+								Login Here
+							</a>
 						</div>
 					</form>
 				</div>
