@@ -1,4 +1,4 @@
-# FinancialBot
+# COGNICHAT
 **An Intelligent Chatbot for Personalised Financial Services**
 
 
@@ -36,7 +36,11 @@ We aim to build a responsive web application for the same in which we will provi
 
 ## WORKPLAN
 
-![alt text](../FinBot Diagrams/Workflow.PNG
+* Get a http request with a text from the user.
+* Use Natural Language Understanding (NLU) to get the intent from the text.
+* Use the trained model (an LSTM neural network implemented using Google’s TensorFlow and Python) to predict the next action of the bot.
+* Respond to the user.
+* Wait for the next sentence from the user.
 
 ## DELIVERABLES
 
