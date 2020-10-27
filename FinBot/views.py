@@ -102,4 +102,8 @@ def chart(request):
 	return render(request, 'chart.html', {
 		'labels': label,
 		'data': data,
+<<<<<<< HEAD
 	})
+=======
+	})
+>>>>>>> 1a12cdb589ec7f4c571b6ca8db72571b20249fc2
