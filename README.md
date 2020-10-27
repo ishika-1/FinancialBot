@@ -36,7 +36,7 @@ We aim to build a responsive web application for the same in which we will provi
 
 ## WORKPLAN
 
-![GitHub Logo](C:\Users\ISHIKA\Desktop\FinancialBot\FinBot Diagrams\Workflow.png)
+![GitHub Logo](\FinBot Diagrams\Workflow.png)
 
 ## DELIVERABLES
 
