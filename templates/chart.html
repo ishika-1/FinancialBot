@@ -1,79 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+		<style>
+			button {
+				background-color: #e7e7e7; 
+				color: black;
+				border: none;
+				padding: 12px 28px;
+				border-radius: 9px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 20px;
+			}
+			.container {
+				height: 100px;
+				position: relative;
+			}  
+			.vertical-center {
+				margin: 0;
+				position: absolute;
+				left: 41.5%;
+				top: 40%;
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+		</style>
+	</head>
 
+	<body>
+		<div>
+			<br>
+			<div id="container" style="margin:auto; width: 70%;">
+				<canvas id="pie-chart"></canvas>
+			</div>
 
-        <style>
-            button {
-                background-color: #e7e7e7; 
-                color: black;
-                border: none;
-                padding: 12px 28px;
-                border-radius: 12px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 20px;
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-              }
-
-              .container {
-                height: 100px;
-                position: relative;
-                border: 3px solid black;
-              }
-              
-              .vertical-center {
-                margin: 0;
-                position: absolute;
-                left: 45%;
-                top: 40%;
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-              }
-
-        </style>
-
-    </head>
-    <body>
-        <div id="container" style="width: 75%;">
-            <canvas id="pie-chart"></canvas>
-        </div>
-
-        <script>
-
-            var config = {
-              type: 'pie',
-              data: {
-                datasets: [{
-                  data: {{ data|safe }},
-                  backgroundColor: [
-                  '#FFC0CB', '#EE82EE', '#7B68EE', '#F08080', '#FFE4B5','#90EE90','#D3D3D3'
-                  ],
-                  label: 'Total Expenditure'
-                }],
-                labels: {{ labels|safe }}
-              },
-              options: {
-                responsive: true
-              }
-            };
-        
-            window.onload = function() {
-              var ctx = document.getElementById('pie-chart').getContext('2d');
-              window.myPie = new Chart(ctx, config);
-            };
-        
-          </script>
-
-            <div class="container">
-                <div class="vertical-center">
-                <button><a href="{% url 'homepage' %}">Go Back to Chatbot</a></button>
-                </div>
-            </div>
-
-
-
-    </body>
+			<script>
+				var config = {
+				type: 'pie',
+				data: {
+					datasets:[{
+					data: {{ data|safe }},
+					backgroundColor: ['#FFC0CB', '#EE82EE', '#7B68EE', '#F08080', '#FFE4B5','#90EE90','#D3D3D3'],
+					label: 'Total Expenditure'
+					}],
+					labels: {{ labels|safe }}
+				},
+				options: {responsive: true}
+				};
+			
+				window.onload = function() {
+					var ctx = document.getElementById('pie-chart').getContext('2d');
+					window.myPie = new Chart(ctx, config);
+				};
+			</script>
+			<br>
+			<div class="container" style="margin:auto">
+				<div class="vertical-center">
+					<button>
+						<a style="color: #555555; font-family:Arial; text-decoration: none; font-weight: bold;" href="{% url 'homepage' %}">
+							GO BACK TO CHATBOT
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

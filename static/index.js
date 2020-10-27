@@ -25,12 +25,8 @@ $('document').ready(function(){
 
 	});
 
-
-
-
 	//----------------------User Sends Message Methods--------------------------------//
 	// Method which executes once the enter key on the keyboard is pressed
-	// Primary function sends the text which the user typed
 	$("textarea").keypress(function(event) {
 
 		// If the enter key is pressed
@@ -65,7 +61,6 @@ $('document').ready(function(){
 		// Call the method to switch recognition to voice input
 		switchRecognition();
 	});
-
 
 
 	// If the user selects one of the dynamic button responses
@@ -103,46 +98,44 @@ function send(text) {
 
 	// Find the last message in the chatlogs
 	var $sentMessage = $(".chatlogs .chat").last();
- console.log("Last Message")
- console.log( $sentMessage)
+	console.log("Last Message")
+	console.log( $sentMessage)
+
 	// Check to see if that message is visible
 	checkVisibility($sentMessage);
 
 	// update the last message sent variable to be stored in the database and store in database
 	lastSentMessage = text;
-	///storeMessageToDB();
-
 
 	// AJAX post request, sends the users text to API.AI and
 	// calls the method newReceivedMessage with the response from API.AI
 	$.ajax({
-
 		success: function(data) {
 			console.log("hi")
-			 var message= lastSentMessage
-			 //alert(message)
-			 var str
-			 var url_django = '/save_message?message='+message;
-			 //alert(url_django)
-			 var xhttp = new XMLHttpRequest();
-				 xhttp.onreadystatechange = function() {
-					 if (this.readyState == 4 && this.status == 200) {
+			var message= lastSentMessage
+			//alert(message)
+			var str
+			var url_django = '/save_message?message='+message;
+			//alert(url_django)
+			var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+
+					if (this.readyState == 4 && this.status == 200) {
+
 						//document.getElementById("demo").innerHTML = this.responseText;
 						str= xhttp.responseText
-						//str.replace(/<&#91;^>&#93;*>/g, "")
 
+						//str.replace(/<&#91;^>&#93;*>/g, "")
 						console.log(str)
 						newRecievedMessage(str);
+
 						//alert(str)
 						console.log("successful")
-					 }
-				 };
-
-					 xhttp.open("GET", url_django, true);
-					 xhttp.send();
+					}
+				};
+				xhttp.open("GET", url_django, true);
+				xhttp.send();
 		// Pass the response into the method
-
-
 		},
 		error: function() {
 			newRecievedMessage("Internal Server Error");
@@ -160,6 +153,7 @@ function send(text) {
 // Splits between the button messages, multi messages and single message
 function newRecievedMessage(messageText) {
 	console.log(messageText)
+
 	// Variable storing the message with the "" removed
 	var removedQuotes = messageText.replace(/[""]/g,"");
 
@@ -169,11 +163,9 @@ function newRecievedMessage(messageText) {
 	// Show the typing indicator
 	showLoading();
 
-		// After 3 seconds call the createNewMessage function
-	setTimeout(function() {
-			createNewMessage(removedQuotes);
-		}, DEFAULT_TIME_DELAY);
-	}
+	// After 3 seconds call the createNewMessage function
+	setTimeout(function() {createNewMessage(removedQuotes);}, DEFAULT_TIME_DELAY);
+}
 
 
 // Method to create a new div showing the text from API.AI
@@ -184,16 +176,9 @@ function createNewMessage(message) {
 
 	// take the message and say it back to the user.
 	//speechResponse(message);
-
-	// // Show the send button and the text area
-	// $('#rec').css('visibility', 'visible');
-	// $('textarea').css('visibility', 'visible');
-
 	// Append a new div to the chatlogs body, with an image and the text from API.AI
 	$chatlogs.append(
-		$('<div/>', {'class': 'chat friend'}).append(
-			//$('<div/>', {'class': 'user-photo'}).append($('<img src="Images/ana.JPG" />')),
-			$('<p/>', {'class': 'chat-message', 'text': message})));
+	$('<div/>', {'class': 'chat friend'}).append($('<p/>', {'class': 'chat-message', 'text': message})));
 
 	// Find the last message in the chatlogs
 	var $newMessage = $(".chatlogs .chat").last();
@@ -209,22 +194,18 @@ function createNewMessage(message) {
 
 // Funtion which shows the typing indicator
 // As well as hides the textarea and send button
-function showLoading()
-{
+function showLoading() {
+
 	$chatlogs.append($('#loadingGif'));
 	$("#loadingGif").show();
-
-	// $('#rec').css('visibility', 'hidden');
-	// $('textarea').css('visibility', 'hidden');
-
 	$('.chat-form').css('visibility', 'hidden');
- }
+}
 
 
 
 // Function which hides the typing indicator
-function hideLoading()
-{
+function hideLoading() {
+
 	$('.chat-form').css('visibility', 'visible');
 	$("#loadingGif").hide();
 
@@ -233,14 +214,13 @@ function hideLoading()
 
 	// reset the size of the text area
 	$(".input").attr("rows", "1");
-
 }
 
 
 
 // Method which checks to see if a message is in visible
-function checkVisibility(message)
-{
+function checkVisibility(message) {
+
 	// Scroll the view down a certain amount
 	$chatlogs.stop().animate({scrollTop: $chatlogs[0].scrollHeight});
 }
@@ -250,17 +230,16 @@ function checkVisibility(message)
 
 
 //----------------------Voice Message Methods--------------------------------//
-//Voice stuff
 var recognition;
 
 function startRecognition() {
 
-  console.log("Start")
+	console.log("Start")
 	recognition = new webkitSpeechRecognition();
 
 	recognition.onstart = function(event) {
 
-    console.log("Update");
+	console.log("Update");
 		updateRec();
 	};
 
@@ -286,8 +265,6 @@ function startRecognition() {
 
 }
 
-
-
 function stopRecognition() {
 	if (recognition) {
         console.log("Stop Recog");
@@ -297,74 +274,51 @@ function stopRecognition() {
 	updateRec();
 }
 
-
-
 function switchRecognition() {
 	if (recognition) {
-        console.log(" Stop if");
+		console.log(" Stop if");
 		stopRecognition();
 	} else {
 		startRecognition();
 	}
 }
 
-
 function setInput(text) {
 	$(".input").val(text);
-
-    send(text);
-	  console.log(text)
+	send(text);
+	console.log(text)
     $(".input").val("");
-
 }
-
 
 function updateRec() {
-
 	console.log("Update Recognition")
-	/*if (recognition) {
-		$("#rec").attr("src", "Images/MicrophoneOff.png");
-	} else {
-		$("#rec").attr("src", "Images/microphone.png");
-
-	}*/
 }
 
-function speechResponse(message)
-{
+function speechResponse(message) {
 
 	var msg = new SpeechSynthesisUtterance();
-
-	// These lines list all of the voices which can be used in speechSynthesis
-	//var voices = speechSynthesis.getVoices();
-	//console.log(voices);
-
-
 	msg.default = false;
- 	msg.voiceURI = "Fiona";
+	msg.voiceURI = "Fiona";
 	msg.name = "Fiona";
 	msg.localService = true;
-  	msg.text = message;
-  	msg.lang = "en";
+	msg.text = message;
+	msg.lang = "en";
 	msg.rate = .9;
 	msg.volume = 1;
-  	window.speechSynthesis.speak(msg);
-
+	window.speechSynthesis.speak(msg);
 }
-
-
 
 //----------------------------------------- Resize the textarea ------------------------------------------//
 $(document)
-    .one('focus.input', 'textarea.input', function(){
-        var savedValue = this.value;
-        this.value = '';
-        this.baseScrollHeight = this.scrollHeight;
-        this.value = savedValue;
-    })
-    .on('input.input', 'textarea.input', function(){
-        var minRows = this.getAttribute('data-min-rows')|0, rows;
-        this.rows = minRows;
-        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
-        this.rows = minRows + rows;
+	.one('focus.input', 'textarea.input', function(){
+		var savedValue = this.value;
+		this.value = '';
+		this.baseScrollHeight = this.scrollHeight;
+		this.value = savedValue;
+	})
+	.on('input.input', 'textarea.input', function(){
+		var minRows = this.getAttribute('data-min-rows')|0, rows;
+		this.rows = minRows;
+		rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
+		this.rows = minRows + rows;
 	});

@@ -1,56 +1,110 @@
+{%load static%}
 <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Registration Page</title>
 
-<html lang="en" dir="ltr">
-  <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <title></title>
-  </head>
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
 
-  <body>
-    <div class="bg">
-    <div class="container "class="bg">
+		<style type="text/css">
+			body {
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.lavender {
+				color: #543E69;
+			}
+		</style>
+	</head>
 
-      <form method="post" enctype="multipart/form-data">
+	<body>
+		<div class="limiter">
+			<div class="container-login100" style="background-image: url('{{ STATIC_URL }}/static/images/fin2.jpg'); background-size: cover;">
+				<div class="wrap-login100">
+					<form class="login100-form validate-form" method="POST">
+						{% csrf_token %}
+						<span class="login100-form-title p-b-26" style = "text-align = top">
+							<h3>WELCOME TO COGNICHAT<br><br></h3>
+						</span>
 
-        {% csrf_token %}
-        <h1><b>REGISTER</b></h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
+						<!--Username-->
+						<div class="wrap-input100 validate-input">
+							<label for="Username"><b style = "color: #555555">USERNAME</b></label>
+							{{user_form.username}}
+						</div>
 
-      <label for="Username"><b>USERNAME</b></label>
-      {{user_form.username}}
-        <hr>
+						<!--Full Name-->
+						<div class="wrap-input100 validate-input">
+							<label for="name"><b style = "color: #555555">FULL NAME</b></label>
+							<input type="text" name="name" required>
+						</div>
 
-        <label for="name"><b>FULL NAME</b></label>
-      <input type="text" placeholder="Enter name" name="name" required>
-      <hr>
+						<!--Email ID-->
+						<div class="wrap-input100 validate-input">
+							<label for="Email ID"><b style = "color: #555555">EMAIL - ID</b></label>
+							{{user_form.email}}
+						</div>
 
-        <label for="Email ID"><b>EMAIL ID</b></label>
-        {{user_form.email}}
+						<!--Password-->
+						<div class="wrap-input100 validate-input">
+							<label for="Password"><b style = "color: #555555">PASSWORD</b></label>
+							{{user_form.password}}
+						</div>
 
-        <hr>
+						<!--Monthly Income-->
+						<div class="wrap-input100 validate-input">
+							<label for="monthly_income"><b style = "color: #555555">MONTHLY INCOME</b></label>
+							<input type="number" name="monthly_income">
+						</div>
 
-        <label for="Password"><b>PASSWORD</b></label>
-        {{user_form.password}}
+						<!--Account balance-->
+						<div class="wrap-input100 validate-input">
+							<label for="account_balance"><b style = "color: #555555">ACCOUNT BALANCE</b></label>
+							<input type="number" name="account_balance">
+						</div>
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button class="login100-form-btn" type="submit">
+									Register
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-          <hr>
+		<div id="dropDownSelect1"></div>
 
-      <label for="monthly_income"><b>MONTHLY INCOME</b></label>
-      <input type="number" placeholder="Enter Monthly Income" name="monthly_income" required>
-      <hr>
-
-      <label for="account_balance"><b>ACCOUNT BALANCE</b></label>
-      <input type="number" placeholder="Enter Account balance" name="account_balance" >
-      <hr>
-
-             <button type="submit" name="button">REGISTER</button>
-        </form>
-  </div>
-</body>
-
+		<script src="Login_v2\vendor/jquery/jquery-3.2.1.min.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/animsition/js/animsition.min.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/bootstrap/js/popper.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/bootstrap/js/bootstrap.min.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/select2/select2.min.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/daterangepicker/moment.min.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/daterangepicker/daterangepicker.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\vendor/countdowntime/countdowntime.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script src="Login_v2\js/main.js" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="059010966bcb1ededa97392c-text/javascript"></script>
+		<script type="059010966bcb1ededa97392c-text/javascript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-23581568-13');
+		</script>
+		<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="059010966bcb1ededa97392c-|49" defer=""></script>
+	</body>
 </html>

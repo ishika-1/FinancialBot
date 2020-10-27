@@ -1,104 +1,87 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chat Bot User Interface</title>
-        <link rel="stylesheet" type="text/css" href='{% static "style.css" %}'>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-        <script type="text/javascript" src='{% static "credentials.js" %}'></script>
+	<head>
+		<title>Chat Bot User Interface</title>
+		<link rel="stylesheet" type="text/css" href='{% static "style.css" %}'>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+		<script type="text/javascript" src='{% static "credentials.js" %}'></script>
+		<style>
+			button {
+				background-color: #e7e7e7; 
+				color: black;
+				border: none;
+				padding: 12px 28px;
+				border-radius: 12px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 20px;
+				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			}
+			.container {
+				margin: auto;
+				width: 400px;
+				height: 40px;
+				background-color: #555555;
+				border-radius: 5px;
+				border: 10px solid #555555;
+				align-items: flex-start;
+				font-family: Arial;
+			}
+			.vertical-center {
+				margin: 0;
+				position: absolute;
+				left: 30%;
+				top: 40%;
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+			.vertical-center1 {
+				margin: 0;
+				position: absolute;
+				left: 55%;
+				top: 40%;
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+			}
+		</style>
+	</head>
 
-
-        <style>
-            button {
-                background-color: #e7e7e7; 
-                color: black;
-                border: none;
-                padding: 12px 28px;
-                border-radius: 12px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 20px;
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-              }
-
-              .container {
-                height: 100px;
-                position: relative;
-                border: 3px solid black;
-              }
-              
-              .vertical-center {
-                margin: 0;
-                position: absolute;
-                left: 30%;
-                top: 40%;
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-              }
-
-              .vertical-center1 {
-                margin: 0;
-                position: absolute;
-                left: 55%;
-                top: 40%;
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
-              }
-
-        </style>
-
-    </head>
-
-    <body>
-
-        <div class="headerBar">
-                <!--<div class="user-photo"><img src='{% static "Images/ana.JPG" %}'></div>-->
-                <p class="title">User</p>
-        </div>
-
-        <div class="chatbox">
-
-            <div class="chatlogs">
-
-                <div class="chat friend">
-                    <!--<div class="user-photo"><img src='{% static "Images/ana.JPG" %}'></div>-->
-                    <p class="chat-message">Hello!</p>
-                </div>
-
-                <div class="chat friend" id="loadingGif" style="display: none;">
-                    <!--<div class="user-photo"><img src='{% static "Images/ana.JPG" %}'></div>-->
-                    <div class="gif"><img src='{% static "Images/loading.gif" %}'></div>
-                </div>
-
-            </div>
-        </div>
-        <div class="chat-form">
-            <div id="inputDiv">
-                <div id="buttonDiv"></div>
-                <textarea class="input" placeholder="Message" rows="1" data-min-rows='1'></textarea>
-            </div>
-            <div id="chat-form-buttons">
-                <input type ="image"id="rec" name= 'rec'value="rec" src='{% static "Images/microphone.png" %}'>
-                <input type="image" src='{% static "Images/keyboard.png" %}' id="switchInputType"/>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="vertical-center">
-                <button><a href="{% url 'login' %}">Log Out</a></button>
-            </div>
-
-            <div class="vertical-center1">
-                <button><a href="{% url 'chart' %}">Show Expenses</a></button>
-            </div>
-
-        </div>
-
-        <script type="text/javascript" src='{% static "index.js" %}'></script>
-    </body>
-
+	<body style="background-image: url('{{ STATIC_URL }}/static/images/fin2.jpg'); background-size: cover;">
+		<div class="headerBar" style = "background: #555555; width:400px;" >
+			<div style="margin-left: 95px; font-family: Arial;">
+				<p style="font-family: Arial; font-weight:bold;">COGNICHAT</p>
+			</div>
+		</div>
+		<div class="chatbox" style = "height: 500px; width: 400px">
+			<div class="chatlogs">
+				<div class="chat friend">
+					<p class="chat-message">Hello!</p>
+				</div>
+				<div class="chat friend" id="loadingGif" style="display: none;">
+					<div class="gif"><img src='{% static "Images/loading.gif" %}'></div>
+				</div>
+			</div>
+		</div>
+		<div class="chat-form" style = "width: 400px;">
+			<div id="inputDiv">
+				<div id="buttonDiv"></div>
+				<textarea class="input" placeholder="Message" rows="1" data-min-rows='1'></textarea>
+			</div>
+			<div id="chat-form-buttons">
+				<input type ="image"id="rec" name= 'rec'value="rec" src='{% static "Images/microphone.png" %}'>
+				<input type="image" src='{% static "Images/keyboard.png" %}' id="switchInputType"/>
+			</div>
+		</div>
+		<br>
+		<div class="container" style="padding-top: 2px;">
+			<a style="color: white; text-decoration: none; font-weight: bold;" href="{% url 'login' %}">&nbsp;&nbsp;LOG OUT&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+			<a style="color: white; text-decoration: none; font-weight: bold;" href="{% url 'chart' %}">SHOW EXPENSES</a>
+		</div>
+		<script type="text/javascript" src='{% static "index.js" %}'></script>
+	</body>
 </html>
