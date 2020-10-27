@@ -36,7 +36,7 @@ We aim to build a responsive web application for the same in which we will provi
 
 ## WORKPLAN
 
-![alt text](../FinBot%20Diagrams/Workflow.PNG
+![alt text](../FinBot Diagrams/Workflow.PNG
 
 ## DELIVERABLES
 
