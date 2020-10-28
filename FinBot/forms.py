@@ -6,13 +6,13 @@ from FinBot.models import UserDetails
 #Purpose of the class Meta: inbuilt class- gives the meta-data
 # link to a model-> changes made in the form will be reflected in the form
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'width':'100%'}))
-    class Meta:
-        model = User
-        fields = ('username' , 'email' , 'password')
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'width':'100%'}))
+	class Meta:
+		model = User
+		fields = ('username' , 'email' , 'password')
 
 
 class UserProfileInfoForm(forms.ModelForm):
-    class Meta:
-        model = UserDetails
-        fields = ('name','account_balance','monthly_income')
+	class Meta:
+		model = UserDetails
+		fields = ('name','account_balance','monthly_income')
