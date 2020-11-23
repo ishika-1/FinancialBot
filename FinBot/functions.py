@@ -37,7 +37,7 @@ def healthcare(user, amount):
 	exp = user.monthly_expenditure + amount
 	bal = user.account_balance - amount
 	hea = user.healthcare_expenditure + amount
-	userUserDetails.objects.filter(pk= user.pk).update(monthly_expenditure = exp,account_balance = bal, healthcare_expenditure = hea)
+	UserDetails.objects.filter(pk= user.pk).update(monthly_expenditure = exp,account_balance = bal, healthcare_expenditure = hea)
 
 def utilities(user, amount):
 	exp = user.monthly_expenditure + amount
