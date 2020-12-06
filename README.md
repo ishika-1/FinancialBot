@@ -28,10 +28,12 @@ Our Chatbot will allow customers to manage requests in a faster and a more effic
 
 In order to provide some personalized financial services, we aim to create a simple, intelligent bot that greets you, introduces itself and shares some basic information regarding your private financial status. 
 The bot will provide the following information to a user:
-* wallet details (total money in the account, spent amount etc.)
-* scheduled funds
-* customer care services
-* advice on expenditures (whether a client should spend money for an event/cause) 
+* Wallet details (total money in the account, spent amount etc.)
+* Scheduled funds
+* Customer care services
+* Advice on expenditures (whether a client should spend money for an event/cause) 
+
+
 We aim to build a responsive web application for the same in which we will provide for an interface of a dialogue box, where in the client will be able to write his queries and the bot will answer his/her questions in the best possible way.
 
 ## WORKPLAN
