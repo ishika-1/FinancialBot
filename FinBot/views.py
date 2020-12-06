@@ -25,7 +25,6 @@ def savemessage(request):
 
 
 def login(request):
-	print("LOGIN")
 	if request.method=='POST':
 		uname=request.POST.get('username')
 		passw=request.POST.get('password')
@@ -101,5 +100,5 @@ def chart(request):
 			user.miscellaneous_expenditure]
 	return render(request, 'chart.html', {
 		'labels': label,
-		'data': data,
+		'data': data
 	})

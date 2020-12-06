@@ -111,31 +111,24 @@ function send(text) {
 	// calls the method newReceivedMessage with the response from API.AI
 	$.ajax({
 		success: function(data) {
-			console.log("hi")
 			var message= lastSentMessage
-			//alert(message)
 			var str
 			var url_django = '/save_message?message='+message;
-			//alert(url_django)
 			var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 
 					if (this.readyState == 4 && this.status == 200) {
 
-						//document.getElementById("demo").innerHTML = this.responseText;
 						str= xhttp.responseText
 
-						//str.replace(/<&#91;^>&#93;*>/g, "")
 						console.log(str)
 						newRecievedMessage(str);
 
-						//alert(str)
 						console.log("successful")
 					}
 				};
 				xhttp.open("GET", url_django, true);
 				xhttp.send();
-		// Pass the response into the method
 		},
 		error: function() {
 			newRecievedMessage("Internal Server Error");
@@ -175,10 +168,11 @@ function createNewMessage(message) {
 	hideLoading();
 
 	// take the message and say it back to the user.
-	//speechResponse(message);
+	// speechResponse(message);
 	// Append a new div to the chatlogs body, with an image and the text from API.AI
 	$chatlogs.append(
-	$('<div/>', {'class': 'chat friend'}).append($('<p/>', {'class': 'chat-message', 'text': message})));
+		$('<div/>', {'class': 'chat friend'}).append($('<p/>', {'class': 'chat-message', 'text': message}))
+	);
 
 	// Find the last message in the chatlogs
 	var $newMessage = $(".chatlogs .chat").last();

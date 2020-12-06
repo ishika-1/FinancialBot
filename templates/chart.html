@@ -1,32 +1,10 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Categorical Expenses</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/chart.css'%}">
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-		<style>
-			button {
-				background-color: #e7e7e7; 
-				color: black;
-				border: none;
-				padding: 12px 28px;
-				border-radius: 9px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 20px;
-			}
-			.container {
-				height: 100px;
-				position: relative;
-			}  
-			.vertical-center {
-				margin: 0;
-				position: absolute;
-				left: 41.5%;
-				top: 40%;
-				-ms-transform: translateY(-50%);
-				transform: translateY(-50%);
-			}
-		</style>
 	</head>
 
 	<body>
@@ -59,9 +37,9 @@
 			<div class="container" style="margin:auto">
 				<div class="vertical-center">
 					<button>
-						<a style="color: #555555; font-family:Arial; text-decoration: none; font-weight: bold;" href="{% url 'homepage' %}">
-							GO BACK TO CHATBOT
-						</a>
+					<a style="color: #555555; font-family:Arial; text-decoration: none; font-weight: bold;" href="{% url 'homepage' %}">
+						GO BACK TO CHATBOT
+					</a>
 					</button>
 				</div>
 			</div>

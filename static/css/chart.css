@@ -1,0 +1,23 @@
+button {
+    background-color: #e7e7e7; 
+    color: black;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+.container {
+    height: 100px;
+    position: relative;
+}  
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    left: 41.5%;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
